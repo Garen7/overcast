@@ -244,3 +244,79 @@
 	var/obj/item/I = get_active_hand()
 	if (I)
 		I.equip_to_best_slot(src)
+
+/mob/verb/quick_equip_belt()
+	set name = "quick-equip-belt"
+	set hidden = 1
+
+	if(incapacitated())
+		return
+	var/obj/item/thing = get_active_hand()
+	var/obj/item/equipped_belt = get_item_by_slot(slot_belt)
+
+	if(!equipped_belt) // We also let you equip a belt like this
+		if(!thing)
+			src << "<span class='notice'>You have no belt to take something out of.</span>"
+		else
+			equip_to_slot_if_possible(thing, slot_belt)
+			var/mob/living/carbon/human/H = src
+			if(istype(H))
+				H.update_inv_hands()
+		return
+
+	if(!istype(equipped_belt, /obj/item/weapon/storage)) // not a storage item
+		if(!thing)
+			equipped_belt.attack_hand(src)
+		else
+			src << "<span class='notice'>You can't fit anything in.</span>"
+		return
+
+	if(thing) // put thing in belt
+		equipped_belt.attackby(thing, src) // this may be a bad idea, consider using "if(can_be_inserted()) handle_item_insertion" if you see a bug
+		return
+	if(!equipped_belt.contents.len) // nothing to take out
+		src << "<span class='notice'>There's nothing in your belt to take out.</span>"
+		return
+	var/obj/item/stored = equipped_belt.contents[equipped_belt.contents.len]
+	if(!stored || stored.on_found(src))
+		return
+	stored.attack_hand(src) // take out thing from belt
+	return
+
+/mob/verb/quick_equip_back()
+	set name = "quick-equip-back"
+	set hidden = 1
+
+	if(incapacitated())
+		return
+	var/obj/item/thing = get_active_hand()
+	var/obj/item/equipped_back = get_item_by_slot(slot_back)
+
+	if(!equipped_back) // We also let you equip a backpack like this
+		if(!thing)
+			src << "<span class='notice'>You have no backpack to take something out of.</span>"
+		else
+			equip_to_slot_if_possible(thing, slot_back)
+			var/mob/living/carbon/human/H = src
+			if(istype(H))
+				H.update_inv_hands()
+		return
+
+	if(!istype(equipped_back, /obj/item/weapon/storage)) // not a storage item
+		if(!thing)
+			equipped_back.attack_hand(src)
+		else
+			src << "<span class='notice'>You can't fit anything in.</span>"
+		return
+
+	if(thing) // put thing in backpack
+		equipped_back.attackby(thing, src) // this may be a bad idea, consider using "if(can_be_inserted()) handle_item_insertion" if you see a bug
+		return
+	if(!equipped_back.contents.len) // nothing to take out
+		src << "<span class='notice'>There's nothing in your backpack to take out.</span>"
+		return
+	var/obj/item/stored = equipped_back.contents[equipped_back.contents.len]
+	if(!stored || stored.on_found(src))
+		return
+	stored.attack_hand(src) // take out thing from backpack
+	return

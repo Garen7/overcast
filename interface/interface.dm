@@ -92,8 +92,11 @@ Hotkey-Mode: (hotkey-mode must be on)
 \tt = say
 \to = OOC
 \tb = resist
+\t<B></B>h = stop pulling
 \tx = swap-hand
 \tz = activate held object (or y)
+\tShift+e = Put held item into belt(or belt slot) or take out most recent item added.
+\tShift+b = Put held item into backpack(or back slot) or take out most recent item added.
 \tf = cycle-intents-left
 \tg = cycle-intents-right
 \t1 = help-intent
@@ -112,6 +115,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tCtrl+e = equip
 \tCtrl+r = throw
 \tCtrl+b = resist
+\tCtrl+h = stop pulling
 \tCtrl+O = OOC
 \tCtrl+x = swap-hand
 \tCtrl+z = activate held object (or Ctrl+y)
@@ -121,7 +125,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tCtrl+2 = disarm-intent
 \tCtrl+3 = grab-intent
 \tCtrl+4 = harm-intent
-\tDEL = pull
+\tDEL = stop pulling
 \tINS = cycle-intents-right
 \tHOME = drop
 \tPGUP = swap-hand
@@ -145,6 +149,7 @@ Hotkey-Mode: (hotkey-mode must be on)
 \to = OOC
 \tx = cycle active modules
 \tb = resist
+\t<B></B>h = stop pulling
 \tz = activate held object (or y)
 \tf = cycle-intents-left
 \tg = cycle-intents-right
@@ -163,6 +168,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tCtrl+q = unequip active module
 \tCtrl+x = cycle active modules
 \tCtrl+b = resist
+\tCtrl+h = stop pulling
 \tCtrl+o = OOC
 \tCtrl+z = activate held object (or Ctrl+y)
 \tCtrl+f = cycle-intents-left
@@ -171,7 +177,7 @@ Any-Mode: (hotkey doesn't need to be on)
 \tCtrl+2 = activate module 2
 \tCtrl+3 = activate module 3
 \tCtrl+4 = toggle intents
-\tDEL = pull
+\tDEL = stop pulling
 \tINS = toggle intents
 \tPGUP = cycle active modules
 \tPGDN = activate held object
