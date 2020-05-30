@@ -132,6 +132,14 @@ macro "borghotkeymode"
 		command = "a-intent right"
 		is-disabled = false
 	elem 
+		name = "H"
+		command = "delete-key-pressed"
+		is-disabled = false
+	elem 
+		name = "CTRL+H"
+		command = "delete-key-pressed"
+		is-disabled = false
+	elem 
 		name = "O"
 		command = "ooc"
 		is-disabled = false
@@ -334,6 +342,10 @@ macro "macro"
 		command = "a-intent right"
 		is-disabled = false
 	elem 
+		name = "CTRL+H"
+		command = "delete-key-pressed"
+		is-disabled = false
+	elem 
 		name = "CTRL+O"
 		command = "ooc"
 		is-disabled = false
@@ -520,6 +532,10 @@ macro "hotkeymode"
 		command = "resist"
 		is-disabled = false
 	elem 
+		name = "SHIFT+B"
+		command = "quick-equip-back"
+		is-disabled = false
+	elem 
 		name = "D+REP"
 		command = ".east"
 		is-disabled = false
@@ -536,6 +552,10 @@ macro "hotkeymode"
 		command = "quick-equip"
 		is-disabled = false
 	elem 
+		name = "SHIFT+E"
+		command = "quick-equip-belt"
+		is-disabled = false
+	elem 
 		name = "F"
 		command = "a-intent left"
 		is-disabled = false
@@ -550,6 +570,14 @@ macro "hotkeymode"
 	elem 
 		name = "CTRL+G"
 		command = "a-intent right"
+		is-disabled = false
+	elem 
+		name = "H"
+		command = "delete-key-pressed"
+		is-disabled = false
+	elem 
+		name = "CTRL+H"
+		command = "delete-key-pressed"
 		is-disabled = false
 	elem 
 		name = "M"
@@ -764,6 +792,10 @@ macro "borgmacro"
 	elem 
 		name = "CTRL+G"
 		command = "a-intent right"
+		is-disabled = false
+	elem 
+		name = "CTRL+H"
+		command = "delete-key-pressed"
 		is-disabled = false
 	elem 
 		name = "CTRL+Q"
